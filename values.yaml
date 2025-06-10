@@ -1,0 +1,47 @@
+image:
+  repository: danihodovic/celery-exporter
+  tag: latest
+  pullPolicy: IfNotPresent
+
+args:
+  - --broker-url=redis://redis-master.celery-exporter.svc.cluster.local:6379/0
+
+service:
+  port: 9808
+  type: ClusterIP
+  annotations: {}
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+podAnnotations: {}
+
+serviceMonitor:
+  enabled: true
+  interval: 15s
+  scrapeTimeout: 10s
+  labels:
+    release: prometheus
+
+livenessProbe:
+  enabled: true
+  httpGet:
+    path: /health
+    port: 9808
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  timeoutSeconds: 5
+
+readinessProbe:
+  enabled: true
+  httpGet:
+    path: /health
+    port: 9808
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  timeoutSeconds: 5
