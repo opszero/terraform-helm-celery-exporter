@@ -3,8 +3,9 @@ image:
   tag: latest
   pullPolicy: IfNotPresent
 
-args:
-  - --broker-url=redis://redis-master.celery-exporter.svc.cluster.local:6379/0
+env:
+  - name: CE_BROKER_URL
+    value: redis://redis-master.celery-exporter.svc.cluster.local:6379/0
 
 service:
   port: 9808
