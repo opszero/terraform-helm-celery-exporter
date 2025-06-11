@@ -1,9 +1,3 @@
-provider "helm" {
-  kubernetes {
-    config_path = "~/.kube/config"
-  }
-}
-
 # Deploy Celery Exporter
 resource "helm_release" "celery_exporter" {
   count            = var.enable_celery_exporter ? 1 : 0
@@ -13,6 +7,5 @@ resource "helm_release" "celery_exporter" {
   chart            = "celery-exporter"
   version          = var.celery_exporter_chart_version
   create_namespace = true
-
-  values = [file("${path.module}/values.yaml")]
+  values           = [file(var.values_file)]
 }

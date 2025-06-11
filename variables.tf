@@ -23,3 +23,8 @@ variable "celery_exporter_chart_version" {
   type    = string
   default = "0.8.0"
 }
+
+variable "values_file" {
+  description = "Path to the values.yaml file"
+  type        = string
+}
