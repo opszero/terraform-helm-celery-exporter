@@ -2,13 +2,24 @@
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_helm"></a> [helm](#provider\_helm) | ~> 2.11.0 |
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_celery_exporter_chart_name"></a> [celery\_exporter\_chart\_name](#input\_celery\_exporter\_chart\_name) | n/a | `string` | `"celery-exporter"` | no |
+| <a name="input_celery_exporter_chart_version"></a> [celery\_exporter\_chart\_version](#input\_celery\_exporter\_chart\_version) | n/a | `string` | `"0.8.0"` | no |
+| <a name="input_celery_exporter_namespace"></a> [celery\_exporter\_namespace](#input\_celery\_exporter\_namespace) | n/a | `string` | `"celery-exporter"` | no |
+| <a name="input_celery_exporter_release_name"></a> [celery\_exporter\_release\_name](#input\_celery\_exporter\_release\_name) | n/a | `string` | `"celery-exporter"` | no |
+| <a name="input_enable_celery_exporter"></a> [enable\_celery\_exporter](#input\_enable\_celery\_exporter) | Enable or disable Celery Exporter deployment | `bool` | `true` | no |
+| <a name="input_values_file"></a> [values\_file](#input\_values\_file) | Path to the values.yaml file | `string` | n/a | yes |
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [helm_release.celery_exporter](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
 ## Outputs
 
 No outputs.
