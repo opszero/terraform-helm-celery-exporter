@@ -4,7 +4,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_helm"></a> [helm](#provider\_helm) | ~> 3.0.1 |
+| <a name="provider_helm"></a> [helm](#provider\_helm) | ~> 3.1.0 |
 ## Inputs
 
 | Name | Description | Type | Default | Required |
